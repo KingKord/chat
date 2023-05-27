@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0088FF;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.chat-field {
+    font-size: 24px;
+}
+
+.logout-button {
+    background-color: #0066CC;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #0044AA;
+}
+
+.welcome-message {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.welcome-message span {
+    color: blue;
+}
+
+.chat-result {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.log {
+    margin: 10px;
+    height: 100px;
+    width: auto;
+}
+#messages {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    height: 400px;
+    overflow-y: auto;
+
+    margin: 0 auto 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* Стили для кнопки "Загрузить сообщения" */
+#loadButton {
+    padding: 5px 10px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+
+    margin-top: 0; /* Изменение отступа сверху */
+    align-self: center; /* Прижатие кнопки к верхнему краю */
+}
+/* Стили для формы "publish" */
+form[name="publish"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Стили для блока "MessageBlock" */
+#MessageBlock {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для поля ввода сообщения */
+#message {
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.message-date {
+    margin-left: 10px;
+    font-size: 12px;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+}
+/* Стили для кнопки отправки */
+#BSubmit {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#BSubmit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+/* Стили для блока "log" */
+#log {
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#loadButton {
+    padding: 5px 10px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}

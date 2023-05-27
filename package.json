@@ -1,0 +1,8 @@
+{
+  "name": "bdz",
+  "version": "1.0.0",
+  "dependencies": {
+    "mysql2": "^3.3.2",
+    "ws": "^8.13.0"
+  }
+}
