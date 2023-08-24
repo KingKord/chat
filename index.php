@@ -1,4 +1,9 @@
-
+<?php
+$username = $_COOKIE['name'];
+if ($username == null) {
+    header("Location: signIn.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,25 +12,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chat</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/chat.css">
+
     <script src="scripts/client.js"></script>
 </head>
-<body>
+<body class="bg-white-700">
 <header>
     <div class="header-container">
         <div class="chat-field">Добро пожаловать в чат!</div>
         <a class="logout-button" href="signIn.php">Выход</a>
-<!--        <a class="register-button" href="reg.html">Зарегистрироваться</a>-->
 
     </div>
 </header>
-<?php
-$username = $_COOKIE['name'];
-?>
+
 <div class="welcome-message">
     Вы вошли в чат под именем <span><?php echo $username; ?></span>
 </div>
@@ -34,10 +44,14 @@ $username = $_COOKIE['name'];
 <!-- div с сообщениями -->
 
 <div id="messages">
-    <button id="loadButton">Загрузить сообщения</button>
-
-
+    <div id="header">
+        <button id="loadButton">Загрузить сообщения</button>
+        <button id="dragButton">Перетащить окно</button>
+        <button id="deleteButton">Удалить пользователя</button>
+    </div>
 </div>
+
+
 <form name="publish">
 
     <div id="MessageBlock">
@@ -46,8 +60,21 @@ $username = $_COOKIE['name'];
     </div>
 </form>
 
+
+<div id="overlay">
+    <div id="popup">
+        <h2>Введите имя пользователя</h2>
+        <input type="text" placeholder="Имя пользователя" id="delInput">
+        <button id="delButton">Удалить</button>
+        <button id="closeButton">Закрыть</button>
+
+    </div>
+</div>
+
+
 <!-- log с сервера -->
 
-<!--<div id="log"></div>-->
-<!--<script src="scripts/script.js"></script>-->
+<div id="log"></div>
 </body>
+
+
